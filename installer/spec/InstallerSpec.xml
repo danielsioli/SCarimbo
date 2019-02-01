@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<installation version="1.0">
+    <info>
+        <appname>SCarimbo</appname>
+        <appversion>3.0.0.0</appversion>
+        <authors>
+            <author name="Daniel da Silva Oliveira (organizador e desenvolvedor original)" email="danieloliveira@anatel.gov.br"/>
+            <author name="Andre Garcia Pena (contribuinte)" email="andrepena@anatel.gov.br"/>
+            <author name="Alexandre Lada do Carmo (contribuinte)" email="lada@anatel.gov.br"/>
+            <author name="Isabella Costa de Medeiros Gregorio (contribuinte)" email="isabellacmg@anatel.gov.br"/>
+        </authors>
+        <url>http://</url>
+        <javaversion>1.6.0</javaversion>
+        <summarylogfilepath>$INSTALL_PATH/installinfo/Summary.htm</summarylogfilepath>
+    </info>
+    
+    <variables>
+        <variable name="DesktopShortcutCheckboxEnabled" value="true"/>
+        <variable name="APP_VERSION" value="3.0.0.0"/>
+    </variables>
+    
+    <guiprefs height="600" resizable="yes" width="800">
+        <laf name="looks">
+            <os family="unix"/>
+        </laf>
+        <!-- GUI addaption for more informations see "Modifying the GUI" in the documentation -->
+        <modifier key="layoutAnchor" value="CENTER"/>
+        <modifier key="headingPanelCounter" value="progressbar"/>
+        <modifier key="headingPanelCounterPos" value="inNavigationPanel"/>
+        <modifier key="allYGap" value="3"/>
+        <modifier key="paragraphYGap" value="10"/>
+        <modifier key="filler1YGap" value="5"/>
+        <modifier key="filler3XGap" value="10"/>
+    </guiprefs>
+    
+    <native type="izpack" name="ShellLink.dll"/>
+    <native type="3rdparty" name="COIOSHelper.dll" stage="both">
+        <os family="windows"/>
+    </native>
+    
+    <locale>
+        <langpack iso3="por"/>
+    </locale>
+    
+    <resources>
+        <res src="./base/Readme.html" id="HTMLInfoPanel.info"/>
+        <res src="./base/Licence.html" id="HTMLLicencePanel.licence"/>
+        <res src="./images/SCarimbo.png" id="installer.langsel.img"/>
+        
+        <res src="spec/ProcessPanelSpec.xml" id="ProcessPanel.Spec.xml"/>
+        <res src="spec/ShortcutPanelSpec.xml" id="shortcutSpec.xml"/>
+        <res src="./spec/RegistrySpec.xml" id="RegistrySpec.xml"/>
+        
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/core.png" id="ImgPacksPanel.img.0"/>
+        <res src="./images/itext.jpg" id="ImgPacksPanel.img.1"/>
+        <res src="./images/nanoxml.jpg" id="ImgPacksPanel.img.2"/>
+        <res src="./images/bouncy_castle.gif" id="ImgPacksPanel.img.3"/>
+        <res src="./images/SCarimbo.png" id="ImgPacksPanel.img.4"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/src.png" id="ImgPacksPanel.img.5"/>
+        
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border1.png" id="Installer.image.0"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border2.png" id="Installer.image.1"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border3.png" id="Installer.image.2"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border4.png" id="Installer.image.3"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border5.png" id="Installer.image.4"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border6.png" id="Installer.image.5"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border6.png" id="Installer.image.6"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border7.png" id="Installer.image.7"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border7.png" id="Installer.image.8"/>
+        <res src="C:/Arquivos de programas/IzPack/src/dist-files/border8.png" id="Installer.image.9"/>
+    </resources>
+    <panels>
+        <panel classname="CheckedHelloPanel"/>
+        <panel classname="HTMLInfoPanel"/>
+        <panel classname="HTMLLicencePanel"/>
+        <panel classname="TargetPanel"/>
+        <panel classname="ImgPacksPanel"/>
+        <panel classname="SummaryPanel"/>
+        <panel classname="ExtendedInstallPanel"/>
+        <panel classname="ShortcutPanel"/>
+        <panel classname="ProcessPanel"/>
+        <panel classname="SimpleFinishPanel"/>
+    </panels>
+    
+    <!-- The listeners section for CustomActions -->
+    <listeners>
+        <listener installer="SummaryLoggerInstallerListener"/>
+        <listener installer="RegistryInstallerListener"
+                  uninstaller="RegistryUninstallerListener">
+            <os family="windows"/>
+        </listener>
+    </listeners>
+    
+    <packs>
+        <pack name="Base" required="yes" preselected="yes">
+            <description>Arquivos de base</description>
+            <file src="./base/Readme.html" targetdir="$INSTALL_PATH"/>
+            <file src="./base/Licence.html" targetdir="$INSTALL_PATH"/>
+            <fileset dir="images" targetdir="$INSTALL_PATH/icons">
+                <include name="*.ico"/>
+            </fileset>
+        </pack>
+        <pack name="iText 2.0.4" required="yes" preselected="yes">
+            <description>Biblioteca para manipular arquivos PDF</description>
+            <file src="../dist/lib/itext-2.0.4.jar" targetdir="$INSTALL_PATH/lib"/>
+        </pack>
+        <pack name="NanoXML 2.2.1" required="yes" preselected="yes">
+            <description>Biblioteca para manipular arquivos XML</description>
+            <file src="../dist/lib/nanoxml-2.2.1.jar" targetdir="$INSTALL_PATH/lib"/>
+        </pack>
+        <pack name="Bouncy Castle" required="yes" preselected="yes">
+            <description>Biblioteca de criptografia</description>
+            <file src="../dist/lib/bcprov-jdk16-137.jar" targetdir="$INSTALL_PATH/lib"/>
+        </pack>
+        <pack name="Arquivo para executar" required="yes" preselected="yes">
+            <description>SCarimbo.jar</description>
+            <depends packname="iText 2.0.4"/>
+            <depends packname="NanoXML 2.2.1"/>
+            <depends packname="Bouncy Castle"/>
+            <file src="../dist/SCarimbo.jar" targetdir="$INSTALL_PATH"/>
+            <file src="../dist/SCarimbo.exe" targetdir="$INSTALL_PATH"/>
+            <file src="../dist/Configurar SCarimbo.exe" targetdir="$INSTALL_PATH"/>
+            <executable targetfile="$INSTALL_PATH/SCarimbo.jar" stage="never"/>
+            <executable targetfile="$INSTALL_PATH/SCarimbo.exe" stage="never"/>
+            <executable targetfile="$INSTALL_PATH/Configurar SCarimbo.exe" stage="never"/>
+        </pack>
+        <pack name="Arquivos Fonte" required="no" preselected="yes">
+            <description>Todas as fontes do aplicativo</description>
+            <fileset dir="../src" targetdir="$INSTALL_PATH/src">
+                <include name="**/*"/>
+            </fileset>
+        </pack>
+    </packs>
+</installation>

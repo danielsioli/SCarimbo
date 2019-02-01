@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<shortcuts>
+    <skipIfNotSupported/>
+    <programGroup defaultName="$APP_NAME$APP_VERSION" location="startMenu"/>
+    <shortcut
+        name="$APP_NAME"
+        target="$INSTALL_PATH\$APP_NAME.exe"
+        commandLine=""
+        workingDirectory="$INSTALL_PATH"
+        description="Roda o aplicativo"
+        iconFile="$INSTALL_PATH\$APP_NAME.exe"
+        iconIndex="0"
+        initialState="normal"
+        programGroup="yes"
+        desktop="yes"
+        applications="no"
+        startMenu="yes"
+        startup="no"
+    >
+    </shortcut>
+    <shortcut
+        name="Configurar $APP_NAME"
+        target="$INSTALL_PATH\Configurar $APP_NAME.exe"
+        commandLine=""
+        workingDirectory="$INSTALL_PATH"
+        description="Configura o aplicativo"
+        iconFile="$INSTALL_PATH\Configurar $APP_NAME.exe"
+        iconIndex="0"
+        initialState="normal"
+        programGroup="yes"
+        desktop="yes"
+        applications="no"
+        startMenu="yes"
+        startup="no"
+    >
+    </shortcut>
+    <shortcut
+        name="Desinstalar $APP_NAME"
+        target="$INSTALL_PATH\Uninstaller\uninstaller.jar"
+        workingDirectory="$INSTALL_PATH/Uninstaller"
+        description="Desinstala o aplicativo"
+        iconFile="$INSTALL_PATH\icons\delete.ico"
+        initialState="normal"
+        programGroup="yes"
+        desktop="no"
+        applications="no"
+        startMenu="yes"
+        startup="no"
+    >
+    </shortcut>
+</shortcuts>

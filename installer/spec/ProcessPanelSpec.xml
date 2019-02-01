@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<processing>
+    <job name="Configurar SCarimbo">
+        <logfiledir>"$INSTALL_PATH/log"</logfiledir>
+        <osfamily="windows"/>
+        <executefile name="java">
+            <arg>-jar</arg>
+            <arg>"$INSTALL_PATH/$APP_NAME.jar"</arg>
+            <arg>-config</arg>
+        </executefile>
+    </job>
+</processing>
