@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.3" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPanel" name="signatureJPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Assinatura Digital">
+              <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="image_Signature_JLabel" pref="136" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="autoSign_Signature_JLabel" alignment="0" max="32767" attributes="1"/>
+                          <Component id="privateKey_Signature_JLabel" alignment="0" max="32767" attributes="1"/>
+                          <Component id="privateKeyPass_Signature_JLabel" alignment="0" max="32767" attributes="1"/>
+                          <Component id="email_Signature_JLabel" alignment="0" max="32767" attributes="1"/>
+                          <Component id="privateKeyStore_Print_JLabel" alignment="0" max="32767" attributes="1"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="autoSign_Signature_jComboBox" alignment="0" pref="153" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="privateKey_Signature_JTextField" pref="110" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="privateKey_Signature_JButton" min="-2" pref="37" max="-2" attributes="1"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="image_Signature_JTextField" pref="111" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="image_Signature_JButton" min="-2" pref="36" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="privateKeyStore_Print_JPasswordField" alignment="0" pref="153" max="32767" attributes="0"/>
+                      <Component id="email_Signature_JTextField" alignment="0" pref="153" max="32767" attributes="1"/>
+                      <Component id="privateKeyPass_Signature_JPasswordField" alignment="0" pref="153" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <Component id="ajustSignatureImage_Signature_JButton" alignment="0" pref="293" max="32767" attributes="0"/>
+              <Component id="imageFile_Signature_JLabel" alignment="0" pref="293" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="autoSign_Signature_jComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="autoSign_Signature_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="privateKey_Signature_JButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="privateKey_Signature_JTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="privateKey_Signature_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="privateKeyPass_Signature_JPasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="privateKeyPass_Signature_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="privateKeyStore_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="privateKeyStore_Print_JPasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="email_Signature_JTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="email_Signature_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="image_Signature_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="image_Signature_JButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="image_Signature_JTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="imageFile_Signature_JLabel" pref="50" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="ajustSignatureImage_Signature_JButton" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JComboBox" name="autoSign_Signature_jComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Sim"/>
+                <StringItem index="1" value="N&#xe3;o"/>
+                <StringItem index="2" value="Perguntar"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="Integer.parseInt(settings.getProperty(Main.KEYS[Main.AUTO_SIGN]))" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="autoSign_Signature_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Assinar automaticamente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ajustSignatureImage_Signature_JButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ajustar posi&#xe7;&#xe3;o da Assinatura"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ajustSignatureImage_Signature_JButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="privateKey_Signature_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Chave privada"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="privateKey_Signature_JTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.KEY_STORE])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="privateKey_Signature_JButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="privateKey_Signature_JButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="privateKeyPass_Signature_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Senha da chave privada"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="privateKeyPass_Signature_JPasswordField">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.KEY_PASS])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="privateKeyStore_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Senha do arquivo da chave"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="privateKeyStore_Print_JPasswordField">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.STORE_PASS])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="email_Signature_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Email para contato"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="email_Signature_JTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.EMAIL])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="image_Signature_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Imagem da Assinatura"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="image_Signature_JTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="settings.getProperty(Main.KEYS[Main.SIGNATURE_IMAGE])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="image_Signature_JButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="image_Signature_JButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="imageFile_Signature_JLabel">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="if(settings.getProperty(Main.KEYS[Main.SIGNATURE_IMAGE]) != null){" postCode="}else{&#xa;    imageFile_Signature_JLabel.setIcon(new ImageIcon(&quot;&quot;));&#xa;}">
+              <Connection code="new ImageIcon(settings.getProperty(Main.KEYS[Main.SIGNATURE_IMAGE]))" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pdfFilesJPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Arquivos PDF">
+              <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="delete_PDFFiles_JLabel" alignment="0" max="32767" attributes="1"/>
+                      <Component id="dir_PDFFiles_JLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="filesToCreate_PDFFiles_JLabel" alignment="0" max="32767" attributes="1"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="dir_PDFFiles_JTextField" pref="90" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="dir_PDFFiles_JButton" min="-2" pref="34" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="delete_PDFFiles_JComboBox" alignment="0" pref="130" max="32767" attributes="0"/>
+                      <Component id="filesToCreate_PDFFiles_JComboBox" alignment="0" pref="130" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="dir_PDFFiles_JButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dir_PDFFiles_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dir_PDFFiles_JTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="delete_PDFFiles_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="delete_PDFFiles_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="filesToCreate_PDFFiles_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="filesToCreate_PDFFiles_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="dir_PDFFiles_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Diret&#xf3;rio com telas em PDF"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="dir_PDFFiles_JTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.SCREENS_DIR])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="dir_PDFFiles_JButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dir_PDFFiles_JButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="delete_PDFFiles_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Deletar telas ap&#xf3;s execu&#xe7;&#xe3;o"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="delete_PDFFiles_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Sim"/>
+                <StringItem index="1" value="N&#xe3;o"/>
+                <StringItem index="2" value="Perguntar"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="Integer.parseInt(settings.getProperty(Main.KEYS[Main.DELETE_AFTER]))" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="filesToCreate_PDFFiles_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Arquivos a criar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="filesToCreate_PDFFiles_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Numerado"/>
+                <StringItem index="1" value="N&#xe3;o Numerado"/>
+                <StringItem index="2" value="Ambos"/>
+                <StringItem index="3" value="Perguntar"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="Integer.parseInt(settings.getProperty(Main.KEYS[Main.FILES_TO_CREATE]))" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="printJPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Impress&#xe3;o">
+              <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="printingWay_Print_JLabel" max="32767" attributes="1"/>
+                          <Component id="printer1_Print_JLabel" alignment="0" max="32767" attributes="1"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="printer3_Print_JLabel" max="32767" attributes="1"/>
+                          <Component id="printer2_Print_JLabel" alignment="0" max="32767" attributes="1"/>
+                      </Group>
+                      <Component id="printer4_Print_JLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="autoPrint_Print_JLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="acrobat_Print_JLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="autoPrint_Print_JComboBox" pref="127" max="32767" attributes="0"/>
+                      <Component id="printer3_Print_JComboBox" pref="127" max="32767" attributes="0"/>
+                      <Component id="printer4_Print_JComboBox" alignment="0" pref="127" max="32767" attributes="0"/>
+                      <Component id="printer2_Print_JComboBox" alignment="1" pref="127" max="32767" attributes="0"/>
+                      <Component id="printer1_Print_JComboBox" alignment="1" pref="127" max="32767" attributes="0"/>
+                      <Component id="printingWay_Print_JComboBox" alignment="0" pref="127" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="acrobat_Print_JTextField" pref="76" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="acrobat_Print_JButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="printingWay_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="printingWay_Print_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="printer1_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="printer1_Print_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="printer2_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="printer2_Print_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="printer3_Print_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="printer3_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="printer4_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="printer4_Print_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="autoPrint_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="autoPrint_Print_JComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="acrobat_Print_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="acrobat_Print_JButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="acrobat_Print_JTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="printingWay_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Forma de Impress&#xe3;o"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="printingWay_Print_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="7">
+                <StringItem index="0" value="1 p&#xe1;gina por folha"/>
+                <StringItem index="1" value="1 p&#xe1;gina por folha verso branco"/>
+                <StringItem index="2" value="1 p&#xe1;gina na frente e 1 no verso"/>
+                <StringItem index="3" value="2 p&#xe1;ginas na frente e 2 no verso"/>
+                <StringItem index="4" value="2 p&#xe1;ginas na frente"/>
+                <StringItem index="5" value="&#xd3;timo"/>
+                <StringItem index="6" value="Perguntar"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="Integer.parseInt(settings.getProperty(Main.KEYS[Main.PRINTING_WAY]))" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="printer1_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Impressora 1 frente 1 verso"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="printer1_Print_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel(printers)" type="code"/>
+            </Property>
+            <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.PRINTER1])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="printer2_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Impressora 2 frente 2 verso"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="printer2_Print_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel(printers)" type="code"/>
+            </Property>
+            <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.PRINTER2])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="printer3_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Impressora 1 por folha"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="printer3_Print_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel(printers)" type="code"/>
+            </Property>
+            <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.PRINTER3])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="autoPrint_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Imprimir automaticamente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="autoPrint_Print_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="Nenhum"/>
+                <StringItem index="1" value="Numerado"/>
+                <StringItem index="2" value="N&#xe3;o Numerado"/>
+                <StringItem index="3" value="Ambos"/>
+                <StringItem index="4" value="Perguntar"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="Integer.parseInt(settings.getProperty(Main.KEYS[Main.AUTO_PRINT]))" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="acrobat_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Acrobat Reader (AcroRd32)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="acrobat_Print_JTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="try{" postCode="}catch(Exception ex){}">
+              <Connection code="settings.getProperty(Main.KEYS[Main.ACROBAT_READER])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="acrobat_Print_JButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acrobat_Print_JButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="printer4_Print_JLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Impressora 2 frente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="printer4_Print_JComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel(printers)" type="code"/>
+            </Property>
+            <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="settings.getProperty(Main.KEYS[Main.PRINTER4])" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+      <Connection code="new StringBuffer(&quot;Configura&#xe7;&#xf5;es do &quot;).append(Main.APP_NAME).toString()" type="code"/>
+    </Property>
+    <Property name="iconImage" type="java.awt.Image" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+      <Connection code="new ImageIcon(this.getClass().getResource(&quot;/images/Mini - SCarimbo.png&quot;)).getImage()" type="code"/>
+    </Property>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="saveAndExitJButton" pref="229" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="exitJButton" pref="229" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="treeJScrollPane" min="-2" pref="138" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="panelsJScrollPane" pref="320" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="treeJScrollPane" pref="331" max="32767" attributes="1"/>
+                  <Component id="panelsJScrollPane" pref="331" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="saveAndExitJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="exitJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="treeJScrollPane">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTree" name="jTree">
+          <Properties>
+            <Property name="rootVisible" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="valueChanged" listener="javax.swing.event.TreeSelectionListener" parameters="javax.swing.event.TreeSelectionEvent" handler="jTreeValueChanged"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JTree(createTree());"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);&#xa;jTree.setRootVisible(false);"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="saveAndExitJButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salvar &amp; Sair"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveAndExitJButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="exitJButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Apenas Sair"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitJButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="panelsJScrollPane">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="stampJPanel">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Imagem do Carimbo">
+                  <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="stampFile_Stamp_JLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="stampFile_Stamp_JTextField" pref="143" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="stampFile_Stamp_JButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="stampImage_Stamp_JLabel" alignment="0" pref="302" max="32767" attributes="0"/>
+                  <Component id="ajustNumber_Stamp_JButton" alignment="0" pref="302" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="stampImage_Stamp_JLabel" pref="241" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="stampFile_Stamp_JTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="stampFile_Stamp_JButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="stampFile_Stamp_JLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="ajustNumber_Stamp_JButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="stampFile_Stamp_JLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Arquivo da Imagem"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="stampFile_Stamp_JTextField">
+              <Properties>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="settings.getProperty(Main.KEYS[Main.STAMP_IMAGE])" type="code"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="stampFile_Stamp_JButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stampFile_Stamp_JButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="stampImage_Stamp_JLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="if(settings.getProperty(Main.KEYS[Main.STAMP_IMAGE]) != null){" postCode="}else{&#xa;    stampImage_Stamp_JLabel.setIcon(new javax.swing.ImageIcon(&quot;&quot;));&#xa;}">
+                  <Connection code="new javax.swing.ImageIcon(settings.getProperty(Main.KEYS[Main.STAMP_IMAGE]))" type="code"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="ajustNumber_Stamp_JButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ajustar posi&#xe7;&#xe3;o do n&#xfa;mero de p&#xe1;gina"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ajustNumber_Stamp_JButtonActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="SCarimbo" default="default" basedir=".">
+    <description>Builds, tests, and runs the project SCarimbo.</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <property name="installer.dir" value="${basedir}/installer"/>
+    <property name="ant.project.version" value="3.0.0.0"/>
+    <property name="installer.jar" value="${ant.project.name}${ant.project.version}.jar"/>
+    <property name="installer-obfuscated.jar" value="${ant.project.name}${ant.project.version}-obfuscated.jar"/>
+    <property name="installer.exe" value="${ant.project.name}${ant.project.version}.exe"/>
+    <property name="izpack.dir" value="C:\Arquivos de programas\IzPack"/>
+    <property name="launch4j.dir" location="C:\Arquivos de programas\Launch4j" />
+    
+    <!--
+    <property name="yguard.dir" location="C:\Documents and Settings\danieloliveira\Meus documentos\Pessoal\Meus downloads\Decompilers e Obfuscators\yguard-2.2.0\lib" />
+    <property name="renamelog" value="${basedir}/${ant.project.name}_renamelog.xml"/>
+    <property name="shrinklog" value="${basedir}/${ant.project.name}_shrinklog.xml"/>
+    <property name="mainclass" value="main.Main"/>
+    <taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" classpath="${yguard.dir}/yguard.jar"/>
+    -->
+    
+    <taskdef name="izpack" classpath="${izpack.dir}/lib/compiler.jar" classname="com.izforge.izpack.ant.IzPackTask"/>
+    <taskdef name="launch4j"  classname="net.sf.launch4j.ant.Launch4jTask"  classpath="${launch4j.dir}/launch4j.jar:${launch4j.dir}/lib/xstream.jar" />
+    
+    <target name="-post-jar"
+            depends="init,compile,-pre-jar,-do-jar-with-manifest,-do-jar-without-manifest,-do-jar-with-mainclass,-do-jar-with-libraries"
+            description="Creates the installer">
+        <!-- Run EXE -->
+        <!--
+        <yguard>
+            <inoutpair in="dist/${ant.project.name}.jar" out="dist/${installer-obfuscated.jar}"/>
+            
+            <externalclasses>
+                <pathelement location="C:\Documents and Settings\danieloliveira\Meus documentos\Meus Trabalhos\Minhas Ferramentas\Bouncy Castle\bcprov-jdk16-137.jar"/>
+                <pathelement location="C:\Documents and Settings\danieloliveira\Meus documentos\Meus Trabalhos\Minhas Ferramentas\iText\itext-2.0.4.jar"/>
+                <pathelement location="C:\Documents and Settings\danieloliveira\Meus documentos\Meus Trabalhos\Minhas Ferramentas\NanoXML\nanoxml-2.2.1.jar"/>
+            </externalclasses>
+            
+            
+            <shrink logfile="${shrinklog}">
+                
+                <keep>
+                    <class classes="protected"
+                           methods="protected" fields="protected">
+                    </class>
+                </keep>
+            </shrink>
+            
+            <rename mainclass="${mainclass}" logfile="${renamelog}">
+                <property name="error-checking" value="pedantic"/>
+                <keep>
+                    <class classes="protected"
+                           methods="protected" fields="protected">
+                    </class>
+                </keep>
+            </rename>
+        </yguard>
+        -->
+        <launch4j>
+            <config dontWrapJar="false"
+                    headerType="gui"
+                    jar="dist/${ant.project.name}.jar"
+                    outfile="dist/${ant.project.name}.exe"
+                    errTitle="${ant.project.name}"
+                    cmdLine="-run"
+                    chdir="."
+                    customProcName="true"
+                    stayAlive="false"
+                    icon="installer\images\${ant.project.name}.ico"
+            >
+                <jre minVersion="1.6.0"/>
+                <versionInfo fileVersion="${ant.project.version}"
+                             txtFileVersion="${ant.project.version}"
+                             fileDescription="Roda o aplicativo"
+                             copyright="GNU GPL"
+                             productVersion="${ant.project.version}"
+                             txtProductVersion="${ant.project.version}"
+                             productName="${ant.project.name}"
+                             companyName=""
+                             internalName="${ant.project.name}${ant.project.version}"
+                             originalFilename="${installer.exe}"/>
+            </config>
+        </launch4j>
+        <!-- Config EXE -->
+        <launch4j>
+            <config dontWrapJar="false"
+                    headerType="gui"
+                    jar="dist/${ant.project.name}.jar"
+                    outfile="dist/Configurar ${ant.project.name}.exe"
+                    errTitle="${ant.project.name}"
+                    cmdLine="-config"
+                    chdir="."
+                    customProcName="true"
+                    stayAlive="false"
+                    icon="installer\images\Config.ico"
+            >
+                <jre minVersion="1.6.0"/>
+                <versionInfo fileVersion="${ant.project.version}"
+                             txtFileVersion="${ant.project.version}"
+                             fileDescription="Configura o aplicativo"
+                             copyright="GNU GPL"
+                             productVersion="${ant.project.version}"
+                             txtProductVersion="${ant.project.version}"
+                             productName="${ant.project.name}"
+                             companyName=""
+                             internalName="${ant.project.name}${ant.project.version}"
+                             originalFilename="${installer.exe}"
+                />
+                <splash file="installer\images\SCarimbo.bmp"
+                        waitForWindow="true"
+                        timeout="60"
+                        timeoutErr="true"
+                />
+            </config>
+        </launch4j>
+        <!-- Instalador JAR -->
+        <izpack input="${installer.dir}/spec/InstallerSpec.xml"
+                output="${installer.dir}/${installer.jar}"
+                installerType="standard"
+                basedir="${installer.dir}"
+                izPackDir="${izpack.dir}/"/>
+        <!-- Instalador EXE -->
+        <launch4j>
+            <config dontWrapJar="false"
+                    headerType="gui"
+                    jar="installer/${installer.jar}"
+                    outfile="installer/${installer.exe}"
+                    errTitle="${ant.project.name}"
+                    cmdLine=""
+                    chdir="."
+                    customProcName="true"
+                    stayAlive="false"
+                    icon="installer\images\installer.ico"
+            >
+                <jre minVersion="1.6.0"/>
+                <versionInfo fileVersion="${ant.project.version}"
+                             txtFileVersion="${ant.project.version}"
+                             fileDescription="Carimbo para arquivos PDF"
+                             copyright="GNU GPL"
+                             productVersion="${ant.project.version}"
+                             txtProductVersion="${ant.project.version}"
+                             productName="${ant.project.name}"
+                             companyName=""
+                             internalName="${ant.project.name}${ant.project.version}"
+                             originalFilename="${installer.exe}"/>
+                <splash file="installer\images\SCarimbo.bmp"
+                        waitForWindow="true"
+                        timeout="60"
+                        timeoutErr="true"
+                />
+            </config>
+        </launch4j>
+        <delete file="${installer.dir}/${installer.jar}"/>
+    </target>
+    
+    <target name="-post-clean" depends="init,-do-clean">
+        <delete file="${installer.dir}/${installer.exe}"/>
+        <delete file="${installer.dir}/${installer.jar}"/>
+    </target>
+    
+    <!--
+
+    There exist several targets which are by default empty and which can be 
+    used for execution of your tasks. These targets are usually executed 
+    before and after some main targets. They are: 
+
+      -pre-init:                 called before initialization of project properties
+      -post-init:                called after initialization of project properties
+      -pre-compile:              called before javac compilation
+      -post-compile:             called after javac compilation
+      -pre-compile-single:       called before javac compilation of single file
+      -post-compile-single:      called after javac compilation of single file
+      -pre-compile-test:         called before javac compilation of JUnit tests
+      -post-compile-test:        called after javac compilation of JUnit tests
+      -pre-compile-test-single:  called before javac compilation of single JUnit test
+      -post-compile-test-single: called after javac compilation of single JUunit test
+      -pre-jar:                  called before JAR building
+      -post-jar:                 called after JAR building
+      -post-clean:               called after cleaning build products
+
+    (Targets beginning with '-' are not intended to be called on their own.)
+
+    Example of inserting an obfuscator after compilation could look like this:
+
+        <target name="-post-compile">
+            <obfuscate>
+                <fileset dir="${build.classes.dir}"/>
+            </obfuscate>
+        </target>
+
+    For list of available properties check the imported 
+    nbproject/build-impl.xml file. 
+
+
+    Another way to customize the build is by overriding existing main targets.
+    The targets of interest are: 
+
+      -init-macrodef-javac:     defines macro for javac compilation
+      -init-macrodef-junit:     defines macro for junit execution
+      -init-macrodef-debug:     defines macro for class debugging
+      -init-macrodef-java:      defines macro for class execution
+      -do-jar-with-manifest:    JAR building (if you are using a manifest)
+      -do-jar-without-manifest: JAR building (if you are not using a manifest)
+      run:                      execution of project 
+      -javadoc-build:           Javadoc generation
+      test-report:              JUnit report generation
+
+    An example of overriding the target for project execution could look like this:
+
+        <target name="run" depends="SCarimbo-impl.jar">
+            <exec dir="bin" executable="launcher.exe">
+                <arg file="${dist.jar}"/>
+            </exec>
+        </target>
+
+    Notice that the overridden target depends on the jar target and not only on 
+    the compile target as the regular run target does. Again, for a list of available 
+    properties which you can use, check the target you are overriding in the
+    nbproject/build-impl.xml file. 
+
+    -->
+    
+</project>
